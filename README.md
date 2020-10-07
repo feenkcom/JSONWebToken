@@ -13,7 +13,7 @@ in your Pharo environment (Pharo 6 or higher) evaluate
 ```Smalltalk
 Metacello new
       baseline:'JSONWebToken';
-      repository: 'github://noha/JSONWebToken:master/source';
+      repository: 'github://feenkcom/JSONWebToken:0.3.1/source';
       load
 ```
 
