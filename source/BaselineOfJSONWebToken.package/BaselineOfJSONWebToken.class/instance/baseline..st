@@ -4,11 +4,11 @@ baseline: spec
 	spec
 		for: #common
 		do: [ spec
-				baseline: 'NeoJSON'
-				with: [ spec repository: 'github://svenvc/NeoJSON:master/repository' ].
+				baseline: 'NeoJSON' with: [
+				spec repository: 'github://svenvc/NeoJSON:v17/repository' ].
 			spec
 				baseline: 'OpenSSL'
-				with: [ spec repository: 'github://PierceNg/OpenSSL-Pharo/src-st' ].
+				with: [ spec repository: 'github://PierceNg/OpenSSL-Pharo:openssl_1_1/src-st' ].
 			spec
 				package: #'JSONWebToken-Core'
 					with: [ spec requires: #('NeoJSON') ];
