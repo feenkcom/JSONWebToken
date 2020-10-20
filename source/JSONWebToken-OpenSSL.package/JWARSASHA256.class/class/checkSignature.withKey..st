@@ -5,7 +5,9 @@ checkSignature: parts withKey: key
 		join:
 			{parts first.
 			parts second}.
-	signatureByteArray := parts third base64Padded base64Decoded
+	"signatureByteArray := parts third base64Padded base64Decoded
+		asByteArray."
+	signatureByteArray := (Base64UrlEncoder new decode: parts third base64Padded)
 		asByteArray.
 	rsa := (key includesSubstring: 'BEGIN RSA PUBLIC KEY')
 		ifTrue: [ LcRSA fromRsaPublicKeyPemString: key ]
