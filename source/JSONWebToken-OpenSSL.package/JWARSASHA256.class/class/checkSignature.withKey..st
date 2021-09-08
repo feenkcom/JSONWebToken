@@ -1,6 +1,6 @@
 sign
 checkSignature: parts withKey: key
-	| jwtHeaderAndPayload signatureByteArray rsa pubKey |
+	| jwtHeaderAndPayload signatureByteArray publicKey |
 	jwtHeaderAndPayload := $.
 		join:
 			{parts first.
@@ -9,11 +9,15 @@ checkSignature: parts withKey: key
 		asByteArray."
 	signatureByteArray := (Base64UrlEncoder new decode: parts third base64Padded)
 		asByteArray.
-	rsa := (key includesSubstring: 'BEGIN RSA PUBLIC KEY')
-		ifTrue: [ LcRSA fromRsaPublicKeyPemString: key ]
-		ifFalse: [ LcRSA fromPemString: key ].
-	pubKey := LcEvpPublicKey setRSA: rsa.
-	(pubKey
+	publicKey := (key includesSubstring: 'BEGIN RSA PUBLIC KEY')
+		ifTrue: [ LcEvpPublicKey setRSA:  (LcRSA fromRsaPublicKeyPemString: key) ]
+		ifFalse: [ LcEvpPublicKey fromPublicKeyPemString: key ].
+	jwtHeaderAndPayload pinInMemory.
+	signatureByteArray pinInMemory.
+	[ (publicKey
 		digestVerifyMessage: jwtHeaderAndPayload
 		with: signatureByteArray)
-		ifFalse: [ Error signal: 'signature does not match' ]
+		ifFalse: [ Error signal: 'signature does not match' ] ]
+		ensure: [ 
+			jwtHeaderAndPayload unpinInMemory.
+			signatureByteArray unpinInMemory  ]
