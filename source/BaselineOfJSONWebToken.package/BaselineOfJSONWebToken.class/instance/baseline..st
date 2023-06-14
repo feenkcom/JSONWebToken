@@ -2,17 +2,19 @@ baseline
 baseline: spec
 	<baseline>
 	spec for: #'common' do: [
-		spec 
+		spec
 			baseline: 'NeoJSON' with: [
-				spec repository: 'github://svenvc/NeoJSON:v17/repository' ];
+				spec repository: 'github://svenvc/NeoJSON:3dc868944d6eb2ba65927d3018ad13d93a7c4905/repository' ].
+		spec
 			baseline: 'OpenSSL' with: [
-				spec repository: 'github://feenkcom/OpenSSL-Pharo:v0.5.127/src-st' ].
-		spec 
-			package: #'JSONWebToken-Core' with: [
-				spec requires: #('NeoJSON' ). ];
-			package: 'JSONWebToken-Core-Tests' with: [
-				spec requires: #(#'JSONWebToken-Core' ). ];
-			package: 'JSONWebToken-OpenSSL' with: [
-				spec requires: #(#'JSONWebToken-Core' 'OpenSSL' ). ];
-			package: 'JSONWebToken-OpenSSL-Tests' with: [
-				spec requires: #('JSONWebToken-OpenSSL' ). ]. ].
+				spec repository: 'github://feenkcom/OpenSSL-Pharo:v0.5.128/src-st' ].
+
+		spec package: 'JSONWebToken-Core' with: [
+			spec requires: #('NeoJSON') ].
+		spec package: 'JSONWebToken-Core-Tests' with: [
+			spec requires: #(#'JSONWebToken-Core') ].
+		spec package: 'JSONWebToken-OpenSSL' with: [
+			spec requires: #(#'JSONWebToken-Core' 'OpenSSL') ].
+		spec package: 'JSONWebToken-OpenSSL-Tests' with: [
+			spec requires: #('JSONWebToken-OpenSSL') ].
+	]
