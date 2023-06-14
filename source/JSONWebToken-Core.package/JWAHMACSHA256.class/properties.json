@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "TorstenBergmann 8/13/2018 15:25",
+	"commentStamp" : "<historical>",
 	"super" : "JsonWebAlgorithm",
 	"category" : "JSONWebToken-Core-Algorithms",
 	"classinstvars" : [ ],

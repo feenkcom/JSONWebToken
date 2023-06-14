@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "TorstenBergmann 8/13/2018 15:21",
+	"commentStamp" : "<historical>",
 	"super" : "JWSSerializer",
 	"category" : "JSONWebToken-Core-Serialization",
 	"classinstvars" : [ ],
