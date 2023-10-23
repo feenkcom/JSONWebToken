@@ -4,7 +4,7 @@ baseline: spec
 	spec for: #'common' do: [
 		spec
 			baseline: 'NeoJSON' with: [
-				spec repository: 'github://svenvc/NeoJSON:b05162a6e420b501a87c6fc9503745b69d51237a/repository' ].
+				spec repository: 'github://svenvc/NeoJSON:45e63045f5830caec6ac76fdb637b3500540af97/repository' ].
 		spec
 			baseline: 'OpenSSL' with: [
 				spec repository: 'github://feenkcom/OpenSSL-Pharo:v0.5.128/src-st' ].
