@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "Object",
+	"category" : "ONBookReview-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"reviewKbName",
+		"notesKbName",
+		"reviewKb",
+		"notesKb",
+		"pageReviews"
+	],
+	"name" : "BookReview",
+	"type" : "normal"
+}
