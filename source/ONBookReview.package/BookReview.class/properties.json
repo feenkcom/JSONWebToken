@@ -10,7 +10,8 @@
 		"notesKbName",
 		"reviewKb",
 		"notesKb",
-		"pageReviews"
+		"pageReviews",
+		"pageReviewTemplate"
 	],
 	"name" : "BookReview",
 	"type" : "normal"
