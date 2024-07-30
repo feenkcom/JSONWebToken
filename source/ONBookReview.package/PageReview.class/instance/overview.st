@@ -2,6 +2,8 @@ view
 overview
 	| overview |
 	overview := {{'Page'.
-				page title . page}.
-		}.
+				page title.
+				page}.
+			{'Status'.
+				status}}.
 	^ overview

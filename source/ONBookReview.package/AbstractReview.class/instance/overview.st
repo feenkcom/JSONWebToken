@@ -1,0 +1,3 @@
+view
+overview
+	self subclassResponsibility
