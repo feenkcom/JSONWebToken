@@ -5,5 +5,10 @@ overview
 				page title.
 				page}.
 			{'Status'.
-				status}}.
+				status}} asOrderedCollection.
+	self notes
+		ifNotNil: [ overview
+				addLast: {'Notes'.
+						notes title.
+						notes} ].
 	^ overview
