@@ -1,17 +1,11 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "AbstractReview",
+	"super" : "Object",
 	"category" : "ONBookReview-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"reviewKbName",
-		"notesKbName",
-		"reviewKb",
-		"notesKb",
-		"pageReviews"
-	],
-	"name" : "BookReview",
+	"instvars" : [ ],
+	"name" : "AbstractReview",
 	"type" : "normal"
 }
