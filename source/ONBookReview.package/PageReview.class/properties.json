@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "ONBookReview-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"page",
+		"bookReview"
+	],
+	"name" : "PageReview",
+	"type" : "normal"
+}
