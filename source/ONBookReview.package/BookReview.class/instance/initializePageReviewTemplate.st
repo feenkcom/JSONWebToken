@@ -1,3 +1,0 @@
-initialization
-initializePageReviewTemplate
-	pageReviewTemplate := self defaultPageReviewTemplate

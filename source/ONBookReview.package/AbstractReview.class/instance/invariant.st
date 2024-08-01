@@ -1,3 +1,0 @@
-contracts
-invariant
-	self subclassResponsibility

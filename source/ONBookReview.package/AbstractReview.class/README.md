@@ -1,1 +1,0 @@
-I am an abstract superclass of review entities, with some common shared features.
