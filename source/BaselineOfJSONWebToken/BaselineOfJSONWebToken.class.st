@@ -1,33 +1,27 @@
 Class {
 	#name : #BaselineOfJSONWebToken,
 	#superclass : #BaselineOf,
-	#category : 'BaselineOfJSONWebToken'
+	#category : #BaselineOfJSONWebToken
 }
 
-{ #category : #baselines }
+{ #category : #baseline }
 BaselineOfJSONWebToken >> baseline: spec [
 	<baseline>
-	spec
-		for: #common
-		do: [ spec
-				baseline: 'NeoJSON' with: [
-				spec repository: 'github://svenvc/NeoJSON:master/repository' ].
-			spec
-				baseline: 'OpenSSL'
-				with: [ spec repository: 'github://feenkcom/OpenSSL-Pharo/src-st' ].
-			spec
-				package: #'JSONWebToken-Core'
-					with: [ spec requires: #('NeoJSON') ];
-				package: 'JSONWebToken-Core-Tests'
-					with: [ spec requires: #(#'JSONWebToken-Core') ];
-				package: 'JSONWebToken-OpenSSL'
-					with: [ spec requires: #(#'JSONWebToken-Core' 'OpenSSL') ];
-				package: 'JSONWebToken-OpenSSL-Tests'
-					with: [ spec requires: #(#'JSONWebToken-OpenSSL') ].
-			spec
-			group: 'Core' with: #('JSONWebToken-Core');
-			group: 'SSL' with: #('JSONWebToken-OpenSSL');
-			group: 'Tests' with: #('JSONWebToken-Core-Tests' 'JSONWebToken-OpenSSL-Tests');
-			group: 'default' with: #('Core' 'SSL' 'Tests') ]
+	spec for: #'common' do: [
+		spec
+			baseline: 'NeoJSON' with: [
+				spec repository: 'github://svenvc/NeoJSON:9af34bbc47823c740605967c46bfa376a1b81014/repository' ].
+		spec
+			baseline: 'OpenSSL' with: [
+				spec repository: 'github://feenkcom/OpenSSL-Pharo:v0.5.130/src-st' ].
 
+		spec package: 'JSONWebToken-Core' with: [
+			spec requires: #(#NeoJSON) ].
+		spec package: 'JSONWebToken-Core-Tests' with: [
+			spec requires: #(#'JSONWebToken-Core') ].
+		spec package: 'JSONWebToken-OpenSSL' with: [
+			spec requires: #(#'JSONWebToken-Core' #OpenSSL) ].
+		spec package: 'JSONWebToken-OpenSSL-Tests' with: [
+			spec requires: #(#'JSONWebToken-OpenSSL') ].
+	]
 ]
