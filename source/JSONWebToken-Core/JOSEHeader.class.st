@@ -35,6 +35,27 @@ JOSEHeader >> hash [
 	^ properties hash
 ]
 
+{ #category : 'accessing' }
+JOSEHeader >> at: aKey [
+	^ properties at: aKey
+]
+
+{ #category : 'accessing' }
+JOSEHeader >> at: aKey put: aValue [
+	properties at: aKey put: aValue
+]
+
+{ #category : 'accessing' }
+JOSEHeader >> kid [
+"Public Key ID"
+	^ properties at: 'kid'
+]
+
+{ #category : 'accessing' }
+JOSEHeader >> kid: anObject [
+	properties at: 'kid' put: anObject
+]
+
 { #category : #accessing }
 JOSEHeader >> typ [
 	^ self type
